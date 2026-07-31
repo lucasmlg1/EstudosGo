@@ -1,8 +1,9 @@
 // teste unitário, de unidade (testar uma pequena parte do seu código)
 
-package enderecos
+package enderecos_test
 
 import (
+	. "introducao-testes/enderecos"
 	"testing"
 )
 
@@ -13,7 +14,7 @@ type cenarioTeste struct {
 
 func TestTipoDeEndereco(t *testing.T) {
 	// Começa com TestXxxxXxxxX o nome da função obrigatoriamente
-
+	t.Parallel()
 	cenariosDeTeste := []cenarioTeste{
 		{"Avenida ABC", "Avenida"},
 		{"Rua das rosas", "Rua"},
@@ -31,4 +32,11 @@ func TestTipoDeEndereco(t *testing.T) {
 		}
 	}
 
+}
+
+func TestQualquerTipo(t *testing.T) {
+	t.Parallel()
+	if 1 > 2 {
+		t.Error("Teste quebrou")
+	}
 }
